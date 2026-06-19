@@ -7,6 +7,13 @@ public class Pub {
     public static final String GT = "gt";
     public static final String BACARDI_SPECIAL = "bacardi_special";
 
+    private static final int UNIT_OF_RUM = 65;
+    private static final int UNIT_OF_GRENADINE = 10;
+    private static final int UNIT_OF_LIME = 10;
+    private static final int UNIT_OF_GREEN_STUFF = 10;
+    private static final int UNIT_OF_TONIC_WATER = 20;
+    private static final int UNIT_OF_GIN = 85;
+
     public int computeCost(String drink, boolean student, int amount) {
 
         if (amount > 2 && (drink == GT || drink == BACARDI_SPECIAL)) {
@@ -21,10 +28,10 @@ public class Pub {
         }
         else if (drink.equals(A_PROPER_CIDER)) price = 110;
         else if (drink.equals(GT)) {
-            price = ingredient6() + ingredient5() + ingredient4();
+            price = UNIT_OF_GIN + UNIT_OF_TONIC_WATER + UNIT_OF_GREEN_STUFF;
         }
         else if (drink.equals(BACARDI_SPECIAL)) {
-            price = ingredient6()/2 + ingredient1() + ingredient2() + ingredient3();
+            price = UNIT_OF_GIN/2 + UNIT_OF_RUM + UNIT_OF_GRENADINE + UNIT_OF_LIME;
         }
         else {
             throw new IllegalArgumentException("No such drink exists");
@@ -33,35 +40,5 @@ public class Pub {
             price = price - price/10;
         }
         return price*amount;
-    }
-
-    //one unit of rum
-    private int ingredient1() {
-        return 65;
-    }
-
-    //one unit of grenadine
-    private int ingredient2() {
-        return 10;
-    }
-
-    //one unit of lime juice
-    private int ingredient3() {
-        return 10;
-    }
-    
-    //one unit of green stuff
-    private int ingredient4() {
-        return 10;
-    }
-
-    //one unit of tonic water
-    private int ingredient5() {
-        return 20;
-    }
-
-    //one unit of gin
-    private int ingredient6() {
-        return 85;
     }
 }
