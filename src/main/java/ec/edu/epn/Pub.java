@@ -16,7 +16,7 @@ public class Pub {
 
     public int computeCost(String drink, boolean student, int amount) {
 
-        if (amount > 2 && (drink == GT || drink == BACARDI_SPECIAL)) {
+        if (amount > 2 && (GT.equals(drink) || BACARDI_SPECIAL.equals(drink))) {
             throw new IllegalArgumentException("Too many drinks, max 2.");
         }
         int price;

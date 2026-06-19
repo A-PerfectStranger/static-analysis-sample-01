@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Pub spec")
-public class PubPricesTest {
+class PubPricesTest {
 
     private Pub pub;
 
